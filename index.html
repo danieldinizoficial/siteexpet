@@ -214,34 +214,15 @@ section{padding:clamp(52px,7vw,96px) 0;position:relative;scroll-margin-top:86px}
 .provinha{display:flex;flex-wrap:wrap;gap:10px 26px;font-size:.92rem;font-weight:600;color:#5c5c5c}
 .provinha span{display:flex;align-items:center;gap:8px}
 .provinha .i{width:18px;height:18px;color:#F5A623}
-
-.hero-foto{position:relative}
-.hero-blob{
-  position:relative;overflow:hidden;z-index:1;
-  border-radius:56% 44% 46% 54% / 46% 42% 58% 54%;
-  box-shadow:var(--sombra);
-  aspect-ratio:1/1;background:var(--turq-suave)
+.hero-arte{position:relative;padding-bottom:34px}
+.hero-arte img{display:block;width:100%;height:auto;position:relative;z-index:1}
+.hero-arte::after{
+  content:"";position:absolute;left:12%;right:12%;bottom:2px;height:34px;
+  background:radial-gradient(ellipse at center, rgba(27,42,44,.30), rgba(27,42,44,0) 70%);
+  filter:blur(5px);z-index:0
 }
-.hero-blob img{width:100%;height:100%;object-fit:cover}
-.hero-circulo{
-  position:absolute;width:46%;aspect-ratio:1;border-radius:50%;
-  background:var(--turq);opacity:.35;bottom:-6%;left:-8%;z-index:0
-}
-.badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:18px}
-.badge{
-  display:flex;align-items:center;gap:9px;background:#fff;
-  border-radius:999px;padding:11px 17px;font-size:.86rem;font-weight:600;
-  box-shadow:var(--sombra-s);white-space:nowrap;color:var(--titulos)
-}
-.badge .i{width:19px;height:19px;color:var(--turq-esc)}
-
 @media(min-width:900px){
   .hero-grid{grid-template-columns:1.05fr .95fr}
-  .badges{display:contents}
-  .badge{position:absolute;z-index:3}
-  .badge.b1{top:6%;left:-7%}
-  .badge.b2{top:44%;right:-8%}
-  .badge.b3{bottom:7%;left:-9%}
 }
 
 /* =========================================================
@@ -625,7 +606,6 @@ footer a:hover{color:var(--turq)}
      1. HERO
      ============================================================ -->
 <section class="hero" id="inicio">
-  <span class="palavra off" data-vel="0.05" aria-hidden="true">PET</span>
   <div class="wrap hero-grid">
     <div>
       <p class="olho rv">Cuidado veterinário com amor 💙</p>
@@ -650,27 +630,11 @@ footer a:hover{color:var(--turq)}
       </div>
     </div>
 
-    <div class="hero-foto rv" style="--d:.12s">
-      <div class="hero-blob">
-        <!-- [TROCAR] foto real do pet da clínica (fundo removido, olhando para a câmera) -->
-        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=900&h=900&fit=crop&q=80"
-             width="900" height="900" alt="Cachorro sorrindo olhando para a câmera">
-      </div>
-      <span class="hero-circulo" aria-hidden="true"></span>
-      <div class="badges">
-        <span class="badge b1">
-          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 14h2a2 2 0 0 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m14.45 13.39 5.05-4.694C20.196 8 21 6.85 21 5.75a2.75 2.75 0 0 0-4.797-1.837.276.276 0 0 1-.406 0A2.75 2.75 0 0 0 11 5.75c0 1.2.802 2.248 1.5 2.946L16 11.95"/><path d="m2 15 6 6"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a1 1 0 0 0-2.75-2.91"/></svg>
-          Atendimento humanizado
-        </span>
-        <span class="badge b2">
-          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg>
-          Vacinação
-        </span>
-        <span class="badge b3">
-          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg>
-          Veterinários especializados
-        </span>
-      </div>
+    <div class="hero-arte rv" style="--d:.12s">
+      <!-- Arte enviada pelo cliente (selos e decorações já fazem parte da imagem) -->
+      <img src="Imagem do ChatGPT 27 de set. de 2026, 18_35_01.png"
+           width="1254" height="1254" fetchpriority="high"
+           alt="Cachorro sorrindo cercado pelos selos Atendimento humanizado, Vacinação e Veterinários especializados">
     </div>
   </div>
 </section>
