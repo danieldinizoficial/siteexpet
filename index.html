@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ========== SEO / COMPARTILHAMENTO ========== -->
+<title>VivaPet — Clínica Veterinária em [CIDADE] | Consultas, Vacinas e Exames para Cães e Gatos</title>
+<meta name="description" content="Clínica veterinária em [CIDADE] com consulta, vacinação, exames e cirurgias para cães e gatos. Atendimento humanizado e agendamento rápido pelo WhatsApp.">
+<link rel="canonical" href="https://www.seudominio.com.br/">
+<meta name="theme-color" content="#19C6CC">
+<meta property="og:title" content="VivaPet — Cuidado veterinário com amor">
+<meta property="og:description" content="Consulta, vacinas, exames e cirurgias para cães e gatos. Agende pelo WhatsApp.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=1200&h=630&fit=crop&q=80">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://www.seudominio.com.br/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- ========== PIXEL / ANALYTICS — cole aqui Meta Pixel, GA4 ========== -->
+<!-- {{SLOT_PIXEL}} -->
+
+<!-- ========== DADOS ESTRUTURADOS (Schema.org) ==========
+     [CONFIRMAR] nome, telefone, endereço e horários reais. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VeterinaryCare",
+  "name": "VivaPet Clínica Veterinária",
+  "description": "Clínica veterinária para cães e gatos com consultas, vacinas, exames e cirurgias.",
+  "image": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=1200&h=630&fit=crop&q=80",
+  "url": "https://www.seudominio.com.br/",
+  "telephone": "+555133333333",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Exemplo, 123",
+    "addressLocality": "Centro",
+    "addressRegion": "RS",
+    "postalCode": "90000-000",
+    "addressCountry": "BR"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "17:00" }
+  ]
+}
+</script>
+
+<style>
+/* =========================================================
+   1. TOKENS DE DESIGN
+   ========================================================= */
+:root{
+  --turq:        #19C6CC;
+  --turq-esc:    #10A7AC;
+  --turq-suave:  #E4FAFB;
+  --branco:      #FFFFFF;
+  --cinza:       #F4F4F2;
+  --texto:       #333333;
+  --titulos:     #202020;
+  --escuro:      #1B2A2C;
+  --borda:       #E8E8E4;
+
+  --f-titulo: 'Fredoka', 'Poppins', sans-serif;
+  --f-texto:  'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --raio:    22px;
+  --raio-lg: 32px;
+  --sombra:  0 14px 40px rgba(32,32,32,.10);
+  --sombra-s: 0 6px 18px rgba(32,32,32,.07);
+  --max: 1160px;
+}
+
+/* =========================================================
+   2. BASE
+   ========================================================= */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--branco);color:var(--texto);
+  font-family:var(--f-texto);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:76px; /* espaço da barra fixa de CTA no mobile */
+  overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-titulo);color:var(--titulos);line-height:1.12;margin:0 0 .5em;font-weight:600;letter-spacing:-.01em}
+h1{font-size:clamp(2.2rem,6.4vw,4rem)}
+h2{font-size:clamp(1.7rem,4.4vw,2.8rem)}
+h3{font-size:clamp(1.15rem,2.4vw,1.35rem)}
+p{margin:0 0 1em}
+strong{font-weight:700}
+section{padding:clamp(52px,7vw,96px) 0;position:relative;scroll-margin-top:86px}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 20px;position:relative;z-index:2}
+.wrap-texto{max-width:720px}
+.centro{text-align:center}
+.wrap-centro{max-width:760px;margin:0 auto}
+.faixa-cinza{background:var(--cinza)}
+.faixa-turq{background:var(--turq);color:#fff}
+.faixa-turq h2,.faixa-turq h3{color:#fff}
+
+.olho{
+  text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:700;
+  color:var(--turq-esc);margin-bottom:.8em;font-family:var(--f-texto)
+}
+.faixa-turq .olho{color:rgba(255,255,255,.85)}
+.subtitulo{font-size:clamp(1rem,2.4vw,1.12rem);color:#5c5c5c;max-width:640px}
+.faixa-turq .subtitulo{color:rgba(255,255,255,.92)}
+.centro .subtitulo{margin-left:auto;margin-right:auto}
+.destaque{color:var(--turq-esc)}
+.faixa-turq .destaque{color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.45);text-underline-offset:6px}
+
+/* palavra gigante de fundo */
+.palavra{
+  position:absolute;font-family:var(--f-titulo);font-weight:700;
+  font-size:clamp(130px,24vw,340px);line-height:.8;color:var(--turq);
+  opacity:.10;z-index:0;pointer-events:none;user-select:none;white-space:nowrap;
+  letter-spacing:-.02em
+}
+.palavra.off{top:-8%;right:-6%}
+.palavra.esq{bottom:-14%;left:-8%}
+.palavra.branca{color:#fff;opacity:.14}
+.palavra.cinza-t{opacity:.16}
+
+/* =========================================================
+   3. BOTÕES — mesmo destino (WhatsApp), mesma cor
+   ========================================================= */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--turq);color:#fff;text-decoration:none;
+  font-family:var(--f-texto);font-weight:700;font-size:clamp(1rem,2.2vw,1.08rem);
+  padding:18px 34px;border-radius:999px;border:0;cursor:pointer;
+  box-shadow:0 10px 24px rgba(25,198,204,.32);
+  transition:transform .18s ease, background .18s ease, box-shadow .18s ease;
+  text-align:center;max-width:100%
+}
+.btn:hover,.btn:focus-visible{background:var(--turq-esc);transform:translateY(-2px);box-shadow:0 14px 30px rgba(25,198,204,.4)}
+.btn:focus-visible{outline:3px solid var(--titulos);outline-offset:3px}
+.btn .i{width:20px;height:20px}
+.btn-ghost{
+  background:transparent;color:var(--titulos);border:2px solid #dcdcda;box-shadow:none
+}
+.btn-ghost:hover{background:var(--cinza);border-color:var(--cinza);color:var(--titulos);box-shadow:none}
+.btn-branco{background:#fff;color:var(--turq-esc);box-shadow:0 10px 24px rgba(0,0,0,.14)}
+.btn-branco:hover{background:#f4feff;color:var(--turq-esc)}
+.btn-sm{padding:12px 22px;font-size:.92rem;box-shadow:none}
+.btn-sm:hover{box-shadow:0 8px 18px rgba(25,198,204,.35)}
+.micro{font-size:.85rem;color:#6b6b6b;margin-top:14px;line-height:1.5}
+.faixa-turq .micro{color:rgba(255,255,255,.85)}
+
+/* =========================================================
+   4. ÍCONES (Lucide — inline)
+   ========================================================= */
+.i{
+  width:24px;height:24px;flex:none;fill:none;stroke:currentColor;
+  stroke-width:2;stroke-linecap:round;stroke-linejoin:round
+}
+.i-fill{fill:currentColor;stroke:none}
+.i-28{width:28px;height:28px}
+.i-36{width:36px;height:36px}
+.i-44{width:44px;height:44px}
+
+/* =========================================================
+   5. HEADER
+   ========================================================= */
+.cabecalho{
+  position:fixed;top:0;left:0;right:0;z-index:80;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid transparent;transition:border-color .25s, box-shadow .25s
+}
+.cabecalho.rolou{border-color:var(--borda);box-shadow:0 4px 20px rgba(0,0,0,.05)}
+.cabecalho-in{display:flex;align-items:center;justify-content:space-between;height:74px;gap:18px}
+.logo{
+  display:flex;align-items:center;gap:9px;text-decoration:none;
+  font-family:var(--f-titulo);font-weight:700;font-size:1.45rem;color:var(--titulos)
+}
+.logo .i{color:var(--turq);width:26px;height:26px}
+.menu{display:none;flex-direction:column;gap:4px}
+.menu a{
+  text-decoration:none;font-weight:600;font-size:.97rem;color:var(--texto);
+  padding:11px 12px;border-radius:12px;transition:background .15s,color .15s
+}
+.menu a:hover{background:var(--turq-suave);color:var(--turq-esc)}
+.menu .btn{color:#fff;margin-top:10px;justify-content:center}
+.menu .btn:hover{background:var(--turq-esc);color:#fff}
+.menu.aberto{display:flex;position:absolute;top:74px;left:0;right:0;
+  background:#fff;padding:14px 20px 26px;border-bottom:1px solid var(--borda);
+  box-shadow:0 24px 40px rgba(0,0,0,.10);max-height:calc(100vh - 74px);overflow:auto}
+.hamburguer{
+  display:inline-flex;background:var(--turq-suave);border:0;border-radius:14px;
+  padding:11px;cursor:pointer;color:var(--turq-esc)
+}
+.hamburguer .ic-x{display:none}
+.hamburguer[aria-expanded="true"] .ic-menu{display:none}
+.hamburguer[aria-expanded="true"] .ic-x{display:block}
+
+@media(min-width:1000px){
+  .menu{display:flex;flex-direction:row;align-items:center;gap:2px}
+  .menu .btn{margin-top:0;margin-left:14px}
+  .hamburguer{display:none}
+}
+/* =========================================================
+   6. HERO
+   ========================================================= */
+.hero{padding-top:clamp(110px,14vw,150px);padding-bottom:clamp(48px,7vw,90px);overflow:hidden}
+.hero-grid{display:grid;gap:clamp(34px,5vw,56px);align-items:center}
+.hero h1{margin-bottom:.35em}
+.hero .subtitulo{margin-bottom:30px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:26px}
+.provinha{display:flex;flex-wrap:wrap;gap:10px 26px;font-size:.92rem;font-weight:600;color:#5c5c5c}
+.provinha span{display:flex;align-items:center;gap:8px}
+.provinha .i{width:18px;height:18px;color:#F5A623}
+
+.hero-foto{position:relative}
+.hero-blob{
+  position:relative;overflow:hidden;z-index:1;
+  border-radius:56% 44% 46% 54% / 46% 42% 58% 54%;
+  box-shadow:var(--sombra);
+  aspect-ratio:1/1;background:var(--turq-suave)
+}
+.hero-blob img{width:100%;height:100%;object-fit:cover}
+.hero-circulo{
+  position:absolute;width:46%;aspect-ratio:1;border-radius:50%;
+  background:var(--turq);opacity:.35;bottom:-6%;left:-8%;z-index:0
+}
+.badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:18px}
+.badge{
+  display:flex;align-items:center;gap:9px;background:#fff;
+  border-radius:999px;padding:11px 17px;font-size:.86rem;font-weight:600;
+  box-shadow:var(--sombra-s);white-space:nowrap;color:var(--titulos)
+}
+.badge .i{width:19px;height:19px;color:var(--turq-esc)}
+
+@media(min-width:900px){
+  .hero-grid{grid-template-columns:1.05fr .95fr}
+  .badges{display:contents}
+  .badge{position:absolute;z-index:3}
+  .badge.b1{top:6%;left:-7%}
+  .badge.b2{top:44%;right:-8%}
+  .badge.b3{bottom:7%;left:-9%}
+}
+
+/* =========================================================
+   7. FAIXA DE CONFIANÇA
+   ========================================================= */
+.confianca{padding:clamp(38px,5vw,58px) 0}
+.confianca-linha{font-weight:600;color:var(--titulos);text-align:center;margin-bottom:26px;font-family:var(--f-titulo);font-size:1.15rem}
+.nums{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.num-card{
+  background:#fff;border:1px solid var(--borda);border-radius:var(--raio);
+  padding:22px 16px;text-align:center;box-shadow:var(--sombra-s);
+  transition:transform .2s ease, box-shadow .2s ease
+}
+.num-card:hover{transform:scale(1.02);box-shadow:var(--sombra)}
+.num-card .i{color:var(--turq);margin-bottom:8px}
+.num-card b{display:block;font-family:var(--f-titulo);font-size:clamp(1.6rem,4vw,2.1rem);color:var(--titulos);line-height:1.05}
+.num-card small{font-size:.86rem;color:#6b6b6b}
+
+/* =========================================================
+   8. SERVIÇOS
+   ========================================================= */
+.svc-grid{display:grid;gap:20px;margin-top:44px}
+.svc{
+  display:flex;flex-direction:column;background:#fff;text-decoration:none;
+  border:1px solid var(--borda);border-radius:var(--raio-lg);padding:30px 26px;
+  box-shadow:var(--sombra-s);transition:transform .2s ease, box-shadow .2s ease, border-color .2s;
+  position:relative;overflow:hidden;color:var(--texto)
+}
+.svc:hover,.svc:focus-visible{transform:scale(1.02);box-shadow:var(--sombra);border-color:transparent;outline:none}
+.svc-ic{
+  width:64px;height:64px;border-radius:20px;background:var(--turq-suave);
+  display:grid;place-content:center;color:var(--turq-esc);margin-bottom:18px;
+  transition:background .2s, color .2s
+}
+.svc:hover .svc-ic{background:var(--turq);color:#fff}
+.svc h3{margin-bottom:.4em}
+.svc p{font-size:.95rem;color:#5c5c5c;margin-bottom:18px;flex:1}
+.svc-seta{display:flex;align-items:center;gap:8px;color:var(--turq-esc);font-weight:700;font-size:.9rem}
+.svc-seta .i{width:19px;height:19px;transition:transform .2s}
+.svc:hover .svc-seta .i{transform:translateX(5px)}
+
+/* =========================================================
+   9. PREVENÇÃO
+   ========================================================= */
+.prev-grid{display:grid;gap:clamp(34px,5vw,60px);align-items:center}
+.prev-foto{position:relative}
+.prev-foto .borda-blob{
+  position:absolute;inset:-14px auto auto -14px;width:100%;height:100%;
+  border:4px solid var(--turq);border-radius:54% 46% 52% 48% / 48% 52% 48% 52%;
+  opacity:.5;transform:rotate(-6deg)
+}
+.prev-foto .foto-blob{
+  position:relative;overflow:hidden;aspect-ratio:4/5;
+  border-radius:48% 52% 46% 54% / 52% 46% 54% 48%;box-shadow:var(--sombra)
+}
+.prev-foto img{width:100%;height:100%;object-fit:cover}
+.prev-frase{font-family:var(--f-titulo);font-size:clamp(1.5rem,3.6vw,2.2rem);color:var(--titulos);line-height:1.2;margin:.2em 0 .45em}
+.pata-decor{position:absolute;color:var(--turq);opacity:.35;z-index:1}
+.pata-decor.p1{top:-30px;right:8%;transform:rotate(18deg)}
+.pata-decor.p2{bottom:-26px;left:4%;transform:rotate(-24deg)}
+
+@media(min-width:880px){.prev-grid{grid-template-columns:.9fr 1.1fr}}
+
+/* =========================================================
+   10. VACINAÇÃO
+   ========================================================= */
+.vac-grid{display:grid;gap:clamp(36px,5vw,64px);align-items:center}
+.vac-foto .foto-blob{
+  overflow:hidden;aspect-ratio:1/1;background:#fff;
+  border-radius:50% 50% 46% 54% / 54% 46% 54% 46%;
+  box-shadow:0 24px 60px rgba(0,0,0,.18)
+}
+.vac-foto img{width:100%;height:100%;object-fit:cover}
+.check-list{list-style:none;padding:0;margin:26px 0 32px;display:grid;gap:13px}
+.check-list li{display:flex;align-items:flex-start;gap:12px;font-weight:500}
+.check-list .ok{
+  width:26px;height:26px;border-radius:50%;background:#fff;color:var(--turq-esc);
+  display:grid;place-content:center;flex:none;box-shadow:0 4px 10px rgba(0,0,0,.12)
+}
+.check-list .ok .i{width:15px;height:15px;stroke-width:3}
+
+@media(min-width:880px){.vac-grid{grid-template-columns:1fr 1fr}}
+
+/* =========================================================
+   11. SOBRE A CLÍNICA
+   ========================================================= */
+.sobre-grid{display:grid;gap:clamp(36px,5vw,64px);align-items:center}
+.sobre-foto{position:relative}
+.sobre-foto .quadra{
+  position:absolute;width:70%;height:70%;background:var(--turq);opacity:.25;
+  border-radius:38px;top:-22px;right:-22px;z-index:0
+}
+.sobre-foto img{
+  position:relative;z-index:1;border-radius:28px;box-shadow:var(--sombra);
+  aspect-ratio:4/3;object-fit:cover;width:100%
+}
+.destaques{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.destaque-item{
+  display:flex;align-items:center;gap:11px;background:var(--cinza);
+  border-radius:16px;padding:14px 16px;font-weight:600;font-size:.93rem;color:var(--titulos)
+}
+.destaque-item .i{color:var(--turq-esc);width:22px;height:22px}
+
+@media(min-width:880px){.sobre-grid{grid-template-columns:1fr 1fr}}
+
+/* =========================================================
+   12. EQUIPE
+   ========================================================= */
+.vet-grid{display:grid;gap:14px;margin-top:34px}
+.vet{
+  background:#fff;border:1px solid var(--borda);border-radius:24px;
+  box-shadow:var(--sombra-s);
+  display:flex;align-items:center;gap:16px;padding:14px 18px;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s
+}
+.vet:hover{transform:translateY(-4px);box-shadow:var(--sombra);border-color:rgba(25,198,204,.55)}
+.vet-foto{
+  width:84px;height:84px;flex:0 0 84px;border-radius:50%;overflow:hidden;
+  background:var(--turq-suave);box-shadow:0 0 0 4px var(--turq-suave)
+}
+.vet-foto img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .35s}
+.vet:hover .vet-foto img{transform:scale(1.06)}
+.vet-corpo{display:flex;flex-direction:column;gap:2px;min-width:0}
+.vet-corpo h3{margin:0;font-size:1.06rem}
+.vet-crm{font-size:.72rem;font-weight:700;color:var(--turq-esc);letter-spacing:.08em;text-transform:uppercase;margin:0}
+.vet-esp{font-size:.9rem;color:#5c5c5c;margin:0}
+.vet .btn-ghost{align-self:flex-start;margin-top:9px;padding:7px 16px;font-size:.8rem;border-radius:999px}
+@media(min-width:900px){
+  .vet-grid{grid-template-columns:repeat(3,1fr);gap:16px}
+}
+
+/* =========================================================
+   13. SEÇÃO VISUAL — AMOR
+   ========================================================= */
+.amor{overflow:hidden;text-align:center}
+.amor-foto{position:relative;max-width:560px;margin:36px auto 0}
+.amor-foto .foto-blob{
+  overflow:hidden;aspect-ratio:5/4;position:relative;z-index:2;
+  border-radius:46% 54% 50% 50% / 56% 48% 52% 44%;box-shadow:var(--sombra)
+}
+.amor-foto img{width:100%;height:100%;object-fit:cover}
+.amor .palavra{
+  left:50%;top:30%;transform:translateX(-50%);
+  font-size:clamp(140px,26vw,380px);opacity:1;color:var(--turq);z-index:1
+}
+.osso{position:absolute;color:var(--turq);opacity:.45;z-index:3}
+.osso.o1{top:-14px;left:2%;transform:rotate(-24deg)}
+.osso.o2{bottom:6%;right:-10px;transform:rotate(30deg)}
+
+/* =========================================================
+   14. DEPOIMENTOS
+   ========================================================= */
+.depo-grid{display:grid;gap:22px;margin-top:44px}
+.depo{
+  background:#fff;border:1px solid var(--borda);border-radius:var(--raio-lg);
+  padding:28px;box-shadow:var(--sombra-s);display:flex;flex-direction:column;
+  transition:transform .2s ease, box-shadow .2s ease
+}
+.depo:hover{transform:scale(1.02);box-shadow:var(--sombra)}
+.estrelas{color:#F5A623;letter-spacing:3px;font-size:1rem;margin-bottom:12px}
+.depo p{font-size:.97rem;color:#4a4a4a;flex:1}
+.depo-quem{display:flex;align-items:center;gap:13px;margin-top:18px}
+.depo-quem img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:none;border:3px solid var(--turq-suave)}
+.depo-quem b{display:block;font-size:.95rem;color:var(--titulos)}
+.depo-quem small{font-size:.82rem;color:#7a7a7a}
+.marca-place{
+  display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--turq-esc);background:var(--turq-suave);
+  padding:4px 10px;border-radius:999px;margin-bottom:12px;align-self:flex-start
+}
+.txt-place{font-style:italic;color:#8a8a8a}
+
+/* =========================================================
+   15. GALERIA
+   ========================================================= */
+.gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:40px}
+.gal-item{
+  position:relative;overflow:hidden;border-radius:20px;aspect-ratio:1;
+  background:var(--turq-suave);margin:0
+}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.gal-ov{
+  position:absolute;inset:0;display:flex;align-items:flex-end;padding:15px;
+  background:linear-gradient(transparent 45%, rgba(20,40,42,.78));
+  color:#fff;font-size:.86rem;font-weight:600;opacity:0;transition:opacity .3s ease
+}
+.gal-item:hover img{transform:scale(1.07)}
+.gal-item:hover .gal-ov{opacity:1}
+
+/* =========================================================
+   16. BLOG
+   ========================================================= */
+.blog-grid{display:grid;gap:20px;margin-top:40px}
+.post{
+  background:#fff;border:1px solid var(--borda);border-radius:var(--raio-lg);
+  padding:28px;box-shadow:var(--sombra-s);display:flex;flex-direction:column;
+  transition:transform .2s ease, box-shadow .2s ease
+}
+.post:hover{transform:scale(1.02);box-shadow:var(--sombra)}
+.post-tag{
+  font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--turq-esc);margin-bottom:12px
+}
+.post h3{font-size:1.18rem;margin-bottom:.5em}
+.post p{font-size:.93rem;color:#5c5c5c;flex:1;margin-bottom:14px}
+.post-nota{font-size:.8rem;color:#9a9a9a;font-weight:600}
+
+/* =========================================================
+   17. FAQ
+   ========================================================= */
+.faq details{border-bottom:1px solid var(--borda);padding:4px 0}
+.faq summary{
+  cursor:pointer;list-style:none;padding:19px 44px 19px 0;position:relative;
+  font-family:var(--f-titulo);font-weight:600;font-size:1.08rem;color:var(--titulos)
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";position:absolute;right:10px;top:50%;transform:translateY(-50%);
+  font-size:1.6rem;font-weight:400;color:var(--turq-esc);transition:transform .2s
+}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{padding:0 40px 18px 0;color:#5c5c5c;margin:0;font-size:.97rem}
+.faq summary:focus-visible{outline:2px solid var(--turq);outline-offset:3px;border-radius:8px}
+
+/* =========================================================
+   18. CTA FINAL
+   ========================================================= */
+.cta-final{overflow:hidden}
+.cta-grid{display:grid;gap:clamp(34px,5vw,56px);align-items:center}
+.cta-foto{position:relative;max-width:460px;margin:0 auto}
+.cta-foto .foto-blob{
+  overflow:hidden;aspect-ratio:1;background:#fff;position:relative;z-index:2;
+  border-radius:52% 48% 44% 56% / 48% 52% 48% 52%;
+  box-shadow:0 24px 60px rgba(0,0,0,.2)
+}
+.cta-foto img{width:100%;height:100%;object-fit:cover}
+.cta-final .palavra{right:-4%;bottom:-18%}
+@media(min-width:880px){.cta-grid{grid-template-columns:1.1fr .9fr}}
+
+/* =========================================================
+   19. CONTATO + MAPA
+   ========================================================= */
+.cont-grid{display:grid;gap:34px;margin-top:40px}
+.info-lista{display:grid;gap:14px}
+.info{
+  display:flex;gap:15px;align-items:flex-start;background:#fff;
+  border:1px solid var(--borda);border-radius:var(--raio);padding:20px 22px;
+  box-shadow:var(--sombra-s);text-decoration:none;
+  transition:transform .2s ease, box-shadow .2s ease
+}
+a.info:hover{transform:scale(1.02);box-shadow:var(--sombra)}
+.info-ic{
+  width:48px;height:48px;border-radius:14px;background:var(--turq-suave);
+  display:grid;place-content:center;color:var(--turq-esc);flex:none
+}
+.info b{display:block;color:var(--titulos);font-size:.95rem;margin-bottom:2px}
+.info span{font-size:.93rem;color:#5c5c5c;line-height:1.55}
+.mapa-caixa{border-radius:var(--raio-lg);overflow:hidden;box-shadow:var(--sombra-s);border:1px solid var(--borda)}
+.mapa-caixa iframe{width:100%;height:340px;border:0;display:block}
+.mapa-acoes{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+@media(min-width:900px){.cont-grid{grid-template-columns:1fr 1.15fr}}
+
+/* =========================================================
+   20. FOOTER
+   ========================================================= */
+footer{background:var(--escuro);color:#B9C6C8;padding:56px 0 34px;font-size:.9rem}
+footer h3,footer .logo{color:#fff}
+footer .logo{font-size:1.3rem;margin-bottom:10px}
+footer a{color:#D6E4E6;text-decoration:none}
+footer a:hover{color:var(--turq)}
+.foot-grid{display:grid;gap:34px}
+.foot-tag{font-size:.95rem;max-width:280px;line-height:1.6}
+.foot-tit{font-family:var(--f-titulo);color:#fff;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px;font-weight:600}
+.foot-links{display:grid;gap:9px}
+.sociais{display:flex;gap:12px;margin-top:6px}
+.sociais a{
+  width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.08);
+  display:grid;place-content:center;color:#fff;transition:background .2s, transform .2s
+}
+.sociais a:hover{background:var(--turq);transform:translateY(-3px)}
+.sociais .i{width:20px;height:20px}
+.legal{
+  border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:24px;
+  font-size:.78rem;line-height:1.7;color:#8FA3A6;text-align:center
+}
+.legal a{text-decoration:underline;color:#B9C6C8}
+.legal .aviso{max-width:820px;margin:0 auto 14px}
+@media(min-width:820px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+
+/* =========================================================
+   21. WHATSAPP — flutuante (desktop) + barra fixa (mobile)
+   ========================================================= */
+.wa-float{
+  position:fixed;right:22px;bottom:24px;z-index:75;
+  width:62px;height:62px;border-radius:50%;background:var(--turq);
+  display:grid;place-content:center;color:#fff;text-decoration:none;
+  box-shadow:0 12px 30px rgba(25,198,204,.45);
+  transition:transform .2s ease, background .2s ease
+}
+.wa-float:hover{transform:scale(1.08);background:var(--turq-esc)}
+.wa-float .i{width:30px;height:30px}
+.wa-float .rot{
+  position:absolute;right:74px;top:50%;transform:translateY(-50%);
+  background:var(--titulos);color:#fff;font-size:.78rem;font-weight:600;
+  padding:8px 13px;border-radius:999px;white-space:nowrap;opacity:0;
+  transition:opacity .2s;pointer-events:none
+}
+.wa-float:hover .rot{opacity:1}
+.barra-mobile{
+  position:fixed;left:0;right:0;bottom:0;z-index:75;
+  background:rgba(255,255,255,.97);backdrop-filter:blur(10px);
+  border-top:1px solid var(--borda);padding:11px 16px;
+  box-shadow:0 -6px 22px rgba(0,0,0,.10)
+}
+.barra-mobile .btn{padding:15px 20px;font-size:1rem;box-shadow:none;width:100%}
+@media(min-width:900px){
+  .barra-mobile{display:none}
+  body{padding-bottom:0}
+}
+@media(max-width:899px){.wa-float{display:none}}
+
+/* =========================================================
+   22. ANIMAÇÕES
+   ========================================================= */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease var(--d,0s), transform .7s ease var(--d,0s)}
+.rv.on{opacity:1;transform:none}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+
+/* acessibilidade */
+.pular{
+  position:absolute;left:-9999px;top:0;background:#fff;color:var(--turq-esc);
+  padding:12px 18px;z-index:200;border-radius:0 0 10px 0;font-weight:700
+}
+.pular:focus{left:0}
+</style>
+<noscript><style>.rv{opacity:1;transform:none}</style></noscript>
+</head>
+
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="cabecalho" id="topo">
+  <div class="wrap cabecalho-in">
+    <a href="#inicio" class="logo" aria-label="VivaPet — página inicial">
+      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg>
+      VivaPet
+    </a>
+
+    <nav class="menu" id="menu" aria-label="Menu principal">
+      <a href="#inicio">Início</a>
+      <a href="#clinica">A Clínica</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#blog">Blog</a>
+      <a href="#contato">Contato</a>
+      <a class="btn btn-sm" href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener">
+        <svg class="i i-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        Agendar consulta
+      </a>
+    </nav>
+
+    <button class="hamburguer" id="btn-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <svg class="i ic-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+      <svg class="i ic-x" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="conteudo">
+<!-- ============================================================
+     1. HERO
+     ============================================================ -->
+<section class="hero" id="inicio">
+  <span class="palavra off" data-vel="0.05" aria-hidden="true">PET</span>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="olho rv">Cuidado veterinário com amor 💙</p>
+      <h1 class="rv" style="--d:.05s">Seu pet merece <span class="destaque">cuidado de verdade</span>.</h1>
+      <p class="subtitulo rv" style="--d:.1s">Atendimento veterinário completo para cuidar da saúde e do bem-estar do seu melhor amigo — consultas, vacinas e exames para cães e gatos.</p>
+
+      <div class="hero-ctas rv" style="--d:.15s">
+        <a class="btn" href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener">
+          <svg class="i i-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          Agendar consulta
+        </a>
+        <a class="btn btn-ghost" href="#servicos">Conhecer serviços</a>
+      </div>
+
+      <p class="micro rv" style="--d:.18s">Agende pelo WhatsApp em poucos cliques — sem burocracia.</p>
+
+      <div class="provinha rv" style="--d:.22s">
+        <!-- [CONFIRMAR] nota real de avaliação (Google/Instagram) -->
+        <span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg> 4.9 avaliação dos clientes</span>
+        <!-- [CONFIRMAR] número de pets atendidos -->
+        <span>+2.000 pets atendidos</span>
+      </div>
+    </div>
+
+    <div class="hero-foto rv" style="--d:.12s">
+      <div class="hero-blob">
+        <!-- [TROCAR] foto real do pet da clínica (fundo removido, olhando para a câmera) -->
+        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=900&h=900&fit=crop&q=80"
+             width="900" height="900" alt="Cachorro sorrindo olhando para a câmera">
+      </div>
+      <span class="hero-circulo" aria-hidden="true"></span>
+      <div class="badges">
+        <span class="badge b1">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 14h2a2 2 0 0 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m14.45 13.39 5.05-4.694C20.196 8 21 6.85 21 5.75a2.75 2.75 0 0 0-4.797-1.837.276.276 0 0 1-.406 0A2.75 2.75 0 0 0 11 5.75c0 1.2.802 2.248 1.5 2.946L16 11.95"/><path d="m2 15 6 6"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a1 1 0 0 0-2.75-2.91"/></svg>
+          Atendimento humanizado
+        </span>
+        <span class="badge b2">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg>
+          Vacinação
+        </span>
+        <span class="badge b3">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg>
+          Veterinários especializados
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     2. FAIXA DE CONFIANÇA
+     ============================================================ -->
+<section class="confianca faixa-cinza" aria-label="Números da clínica">
+  <div class="wrap">
+    <!-- [CONFIRMAR] número de pets atendidos -->
+    <p class="confianca-linha rv">Mais de 2.000 pets atendidos com carinho.</p>
+    <div class="nums">
+      <div class="num-card rv" style="--d:.05s">
+        <svg class="i i-28" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg>
+        <b>+2.000</b><small>Pets atendidos</small>
+      </div>
+      <div class="num-card rv" style="--d:.1s">
+        <svg class="i i-28" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+        <b>4.9</b><small>Avaliação</small>
+      </div>
+      <div class="num-card rv" style="--d:.15s">
+        <svg class="i i-28" viewBox="0 0 24 24" aria-hidden="true"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>
+        <b>+8 anos</b><small>Cuidando de pets</small>
+      </div>
+      <div class="num-card rv" style="--d:.2s">
+        <svg class="i i-28" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18v-6a5 5 0 1 1 10 0v6"/><path d="M5 21a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2z"/><path d="M21 12h1"/><path d="M18.5 4.5 18 5"/><path d="M2 12h1"/><path d="M12 2v1"/><path d="m4.929 4.929.707.707"/></svg>
+        <b>Emergência</b><small>Atendimento rápido</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     3. SERVIÇOS
+     ============================================================ -->
+<section id="servicos">
+  <span class="palavra esq" data-vel="0.04" aria-hidden="true">VET</span>
+  <div class="wrap">
+    <div class="wrap-centro centro">
+      <p class="olho rv">Nossos serviços</p>
+      <h2 class="rv" style="--d:.05s">Tudo que seu pet precisa em um só lugar.</h2>
+      <p class="subtitulo rv" style="--d:.1s">Da primeira consulta do filhote ao acompanhamento do pet idoso — tudo com a mesma atenção e carinho.</p>
+    </div>
+
+    <div class="svc-grid">
+      <a class="svc rv" style="--d:.05s" href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener">
+        <span class="svc-ic"><svg class="i i-36" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg></span>
+        <h3>Consulta veterinária</h3>
+        <p>Acompanhamento completo da saúde do pet.</p>
+        <span class="svc-seta">Agendar <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+
+      <a class="svc rv" style="--d:.1s" href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener">
+        <span class="svc-ic"><svg class="i i-36" viewBox="0 0 24 24" aria-hidden="true"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg></span>
+        <h3>Vacinação</h3>
+        <p>Proteção contra as principais doenças.</p>
+        <span class="svc-seta">Agendar <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+
+      <a class="svc rv" style="--d:.15s" href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener">
+        <span class="svc-ic"><svg class="i i-36" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg></span>
+        <h3>Exames</h3>
+        <p>Diagnósticos rápidos e precisos.</p>
+        <span class="svc-seta">Agendar <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+
+      <a class="svc rv" style="--d:.05s" href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener">
+        <span class="svc-ic"><svg class="i i-36" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg></span>
+        <h3>Cirurgias</h3>
+        <p>Procedimentos realizados com segurança.</p>
+        <span class="svc-seta">Agendar <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+
+      <a class="svc rv" style="--d:.1s" href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener">
+        <span class="svc-ic"><svg class="i i-36" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5.5c1.2-1.2 3-2 4.7-2 2.4 0 4 1.9 4 4.4 0 1.6-.5 3-.9 4.7-.4 1.6-.7 3.4-1.1 5-.3 1.3-.6 2.6-1.4 3.4-.9.9-2.2.6-2.8-.5-.5-.9-.7-2.1-1-3.2-.3-1-.5-1.9-1.5-1.9s-1.2.9-1.5 1.9c-.3 1.1-.5 2.3-1 3.2-.6 1.1-1.9 1.4-2.8.5-.8-.8-1.1-2.1-1.4-3.4-.4-1.6-.7-3.4-1.1-5C4.5 10.9 4 9.5 4 7.9c0-2.5 1.6-4.4 4-4.4 1.7 0 3.5.8 4.7 2z"/></svg></span>
+        <h3>Odontologia veterinária</h3>
+        <p>Saúde bucal para cães e gatos.</p>
+        <span class="svc-seta">Agendar <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+
+      <a class="svc rv" style="--d:.15s" href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener">
+        <span class="svc-ic"><svg class="i i-36" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="m9 15 2 2 4-4"/></svg></span>
+        <h3>Check-up</h3>
+        <p>Prevenção e acompanhamento periódico.</p>
+        <span class="svc-seta">Agendar <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- ============================================================
+     4. PREVENÇÃO
+     ============================================================ -->
+<section class="faixa-cinza">
+  <span class="palavra off cinza-t" data-vel="0.05" aria-hidden="true">SAÚDE</span>
+  <div class="wrap prev-grid">
+    <div class="prev-foto rv">
+      <span class="pata-decor p1" aria-hidden="true"><svg class="i i-44" viewBox="0 0 24 24"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg></span>
+      <span class="pata-decor p2" aria-hidden="true"><svg class="i i-36" viewBox="0 0 24 24"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg></span>
+      <span class="borda-blob" aria-hidden="true"></span>
+      <div class="foto-blob">
+        <!-- [TROCAR] foto de um gato da clínica -->
+        <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=700&h=880&fit=crop&q=80"
+             width="700" height="880" alt="Gato laranja olhando para cima" loading="lazy">
+      </div>
+    </div>
+
+    <div>
+      <p class="olho rv">Prevenção</p>
+      <h2 class="rv" style="--d:.05s">Pet saudável!</h2>
+      <p class="prev-frase rv" style="--d:.1s">Prevenir também é <span class="destaque">uma forma de amar</span>.</p>
+      <p class="subtitulo rv" style="--d:.15s">Consultas e exames periódicos ajudam a identificar problemas antes que eles se tornem mais graves.</p>
+      <div class="rv" style="--d:.2s">
+        <a class="btn" href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener" style="margin-top:8px">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="m9 15 2 2 4-4"/></svg>
+          Agendar check-up
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     5. VACINAÇÃO
+     ============================================================ -->
+<section class="faixa-turq">
+  <span class="palavra branca off" data-vel="0.05" aria-hidden="true">VET</span>
+  <div class="wrap vac-grid">
+    <div class="vac-foto rv">
+      <div class="foto-blob">
+        <!-- [TROCAR] foto de um cachorro da clínica -->
+        <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=760&h=760&fit=crop&q=80"
+             width="760" height="760" alt="Cachorro bull terrier sentado" loading="lazy">
+      </div>
+    </div>
+
+    <div>
+      <p class="olho rv">Vacinação</p>
+      <h2 class="rv" style="--d:.05s">Vacinas em dia?</h2>
+      <p class="subtitulo rv" style="--d:.1s">Mantenha seu melhor amigo protegido contra as principais doenças.</p>
+
+      <ul class="check-list rv" style="--d:.15s">
+        <li><span class="ok"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Vacinas para filhotes</li>
+        <li><span class="ok"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Vacinas para cães adultos</li>
+        <li><span class="ok"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Vacinas para gatos</li>
+        <li><span class="ok"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Carteira de vacinação</li>
+        <li><span class="ok"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Orientação veterinária</li>
+      </ul>
+
+      <div class="rv" style="--d:.2s">
+        <a class="btn btn-branco" href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="m9 15 2 2 4-4"/></svg>
+          Consultar calendário de vacinação
+        </a>
+        <p class="micro">Resposta rápida pelo WhatsApp, de segunda a sábado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     6. SOBRE A CLÍNICA
+     ============================================================ -->
+<section id="clinica">
+  <div class="wrap sobre-grid">
+    <div class="sobre-foto rv">
+      <span class="quadra" aria-hidden="true"></span>
+      <!-- [TROCAR] foto real da clínica ou do veterinário atendendo -->
+      <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=800&h=600&fit=crop&q=80"
+           width="800" height="600" alt="Profissional cuidando de um cachorro golden retriever" loading="lazy">
+    </div>
+
+    <div>
+      <p class="olho rv">A clínica</p>
+      <h2 class="rv" style="--d:.05s">Aqui seu pet é tratado como família.</h2>
+      <p class="subtitulo rv" style="--d:.1s">Nossa missão é oferecer atendimento veterinário de qualidade combinando tecnologia, experiência e muito carinho pelos animais.</p>
+
+      <div class="destaques rv" style="--d:.15s">
+        <span class="destaque-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg> Equipe especializada</span>
+        <span class="destaque-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg> Atendimento humanizado</span>
+        <span class="destaque-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg> Equipamentos modernos</span>
+        <span class="destaque-item"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg> Ambiente pet friendly</span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============================================================
+     7. EQUIPE
+     ============================================================ -->
+<section id="equipe">
+  <div class="wrap">
+    <div class="wrap-centro centro">
+      <p class="olho rv">Equipe</p>
+      <h2 class="rv" style="--d:.05s">Conheça nossos veterinários</h2>
+      <p class="subtitulo rv" style="--d:.1s">Profissionais que combinam técnica, experiência e amor pelos animais.</p>
+    </div>
+
+    <div class="vet-grid">
+      <!-- [CONFIRMAR] nome, CRMV, especialidade e foto reais de cada profissional -->
+      <article class="vet rv" style="--d:.05s">
+        <div class="vet-foto">
+          <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=240&h=240&fit=crop&q=80"
+               width="240" height="240" alt="Retrato da Dra. Mariana Silva" loading="lazy">
+        </div>
+        <div class="vet-corpo">
+          <h3>Dra. Mariana Silva</h3>
+          <p class="vet-crm">Veterinária · CRMV 00000</p>
+          <p class="vet-esp">Clínica geral e medicina felina</p>
+          <a class="btn btn-ghost" href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener">Agendar com a Dra. Mariana</a>
+        </div>
+      </article>
+
+      <article class="vet rv" style="--d:.1s">
+        <div class="vet-foto">
+          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=240&h=240&fit=crop&q=80"
+               width="240" height="240" alt="Retrato do Dr. Rafael Costa" loading="lazy">
+        </div>
+        <div class="vet-corpo">
+          <h3>Dr. Rafael Costa</h3>
+          <p class="vet-crm">Veterinário · CRMV 00000</p>
+          <p class="vet-esp">Cirurgia e ortopedia animal</p>
+          <a class="btn btn-ghost" href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener">Agendar com o Dr. Rafael</a>
+        </div>
+      </article>
+
+      <article class="vet rv" style="--d:.15s">
+        <div class="vet-foto">
+          <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=240&h=240&fit=crop&q=80"
+               width="240" height="240" alt="Retrato da Dra. Ana Beatriz Souza" loading="lazy">
+        </div>
+        <div class="vet-corpo">
+          <h3>Dra. Ana Beatriz Souza</h3>
+          <p class="vet-crm">Veterinária · CRMV 00000</p>
+          <p class="vet-esp">Dermatologia e alergias</p>
+          <a class="btn btn-ghost" href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener">Agendar com a Dra. Ana</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     8. SEÇÃO VISUAL — AMOR
+     ============================================================ -->
+<section class="amor faixa-cinza">
+  <div class="wrap">
+    <div class="wrap-centro centro">
+      <p class="olho rv">É hora de cuidar</p>
+      <h2 class="rv" style="--d:.05s">de quem sempre está<br>ao seu lado.</h2>
+    </div>
+
+    <div class="amor-foto rv" style="--d:.1s">
+      <span class="palavra" data-vel="0.07" aria-hidden="true">AMOR</span>
+      <span class="osso o1" aria-hidden="true"><svg class="i i-44" viewBox="0 0 24 24"><path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/></svg></span>
+      <span class="osso o2" aria-hidden="true"><svg class="i i-36" viewBox="0 0 24 24"><path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/></svg></span>
+      <div class="foto-blob">
+        <!-- [TROCAR] foto de um cachorro em movimento, feliz -->
+        <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?w=900&h=720&fit=crop&q=80"
+             width="900" height="720" alt="Cachorro branco correndo feliz no gramado" loading="lazy">
+      </div>
+    </div>
+
+    <div class="centro rv" style="--d:.2s;margin-top:36px">
+      <a class="btn" href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener">Agendar consulta</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     9. DEPOIMENTOS — NUNCA publicar depoimento inventado.
+        Substitua cada bloco por um review real e autorizado.
+     ============================================================ -->
+<section id="depoimentos">
+  <div class="wrap">
+    <div class="wrap-centro centro">
+      <p class="olho rv">Depoimentos</p>
+      <h2 class="rv" style="--d:.05s">Humanos felizes. Pets também.</h2>
+      <p class="subtitulo rv" style="--d:.1s">O que dizem as pessoas que já confiaram no cuidado com os pets da família.</p>
+    </div>
+
+    <div class="depo-grid">
+      <!-- [INSERIR DEPOIMENTO REAL] -->
+      <article class="depo rv" style="--d:.05s">
+        <span class="marca-place">Depoimento real a inserir</span>
+        <div class="estrelas" aria-label="5 estrelas">★★★★★</div>
+        <p class="txt-place">"[Cole aqui um depoimento verdadeiro de um cliente — o ideal é copiar um review real do Google ou do Instagram, com a autorização da pessoa.]"</p>
+        <div class="depo-quem">
+          <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=120&h=120&fit=crop&q=70" width="52" height="52" alt="Gato do cliente" loading="lazy">
+          <div><b>[Nome do cliente]</b><small>[Nome do pet]</small></div>
+        </div>
+      </article>
+
+      <!-- [INSERIR DEPOIMENTO REAL] -->
+      <article class="depo rv" style="--d:.1s">
+        <span class="marca-place">Depoimento real a inserir</span>
+        <div class="estrelas" aria-label="5 estrelas">★★★★★</div>
+        <p class="txt-place">"[Outro review real: a força do texto está em citar a objeção que o cliente tinha antes e o que mudou depois do atendimento.]"</p>
+        <div class="depo-quem">
+          <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=120&h=120&fit=crop&q=70" width="52" height="52" alt="Cachorro do cliente" loading="lazy">
+          <div><b>[Nome do cliente]</b><small>[Nome do pet]</small></div>
+        </div>
+      </article>
+
+      <!-- [INSERIR DEPOIMENTO REAL] -->
+      <article class="depo rv" style="--d:.15s">
+        <span class="marca-place">Depoimento real a inserir</span>
+        <div class="estrelas" aria-label="5 estrelas">★★★★★</div>
+        <p class="txt-place">"[Terceiro review real. Se tiver, inclua também a nota média do Google e a quantidade de avaliações — isso é prova social de verdade.]"</p>
+        <div class="depo-quem">
+          <img src="https://images.unsplash.com/photo-1527526029430-319f10814151?w=120&h=120&fit=crop&q=70" width="52" height="52" alt="Cachorro do cliente" loading="lazy">
+          <div><b>[Nome do cliente]</b><small>[Nome do pet]</small></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- ============================================================
+     10. GALERIA
+     ============================================================ -->
+<section class="faixa-cinza">
+  <div class="wrap">
+    <div class="wrap-centro centro">
+      <p class="olho rv">Galeria</p>
+      <h2 class="rv" style="--d:.05s">Alguns dos nossos pacientes 🐾</h2>
+      <p class="subtitulo rv" style="--d:.1s">Cada foto é uma história de cuidado.</p>
+    </div>
+
+    <div class="gal-grid">
+      <figure class="gal-item rv" style="--d:.03s">
+        <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=520&h=520&fit=crop&q=75" width="520" height="520" alt="Filhote de golden retriever com uma flor na boca" loading="lazy">
+        <figcaption class="gal-ov">Conheça essa história →</figcaption>
+      </figure>
+      <figure class="gal-item rv" style="--d:.06s">
+        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=520&h=520&fit=crop&q=75" width="520" height="520" alt="Gato preto e branco" loading="lazy">
+        <figcaption class="gal-ov">Conheça essa história →</figcaption>
+      </figure>
+      <figure class="gal-item rv" style="--d:.09s">
+        <img src="https://images.unsplash.com/photo-1505628346881-b72b27e84530?w=520&h=520&fit=crop&q=75" width="520" height="520" alt="Cachorro com óculos de sol" loading="lazy">
+        <figcaption class="gal-ov">Conheça essa história →</figcaption>
+      </figure>
+      <figure class="gal-item rv" style="--d:.12s">
+        <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=520&h=520&fit=crop&q=75" width="520" height="520" alt="Dois cachorros brincando ao ar livre" loading="lazy">
+        <figcaption class="gal-ov">Conheça essa história →</figcaption>
+      </figure>
+      <figure class="gal-item rv" style="--d:.03s">
+        <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=520&h=520&fit=crop&q=75" width="520" height="520" alt="Cachorro pug preto" loading="lazy">
+        <figcaption class="gal-ov">Conheça essa história →</figcaption>
+      </figure>
+      <figure class="gal-item rv" style="--d:.06s">
+        <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=520&h=520&fit=crop&q=75" width="520" height="520" alt="Gatos dormindo juntos" loading="lazy">
+        <figcaption class="gal-ov">Conheça essa história →</figcaption>
+      </figure>
+      <figure class="gal-item rv" style="--d:.09s">
+        <img src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?w=520&h=520&fit=crop&q=75" width="520" height="520" alt="Cachorro com óculos lendo um livro" loading="lazy">
+        <figcaption class="gal-ov">Conheça essa história →</figcaption>
+      </figure>
+      <figure class="gal-item rv" style="--d:.12s">
+        <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=520&h=520&fit=crop&q=75" width="520" height="520" alt="Cachorro jack russell olhando para a câmera" loading="lazy">
+        <figcaption class="gal-ov">Conheça essa história →</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     11. BLOG — transforme os cards em <a> quando os artigos existirem
+     ============================================================ -->
+<section id="blog">
+  <div class="wrap">
+    <div class="wrap-centro centro">
+      <p class="olho rv">Blog</p>
+      <h2 class="rv" style="--d:.05s">Dicas para quem ama pets de verdade</h2>
+      <p class="subtitulo rv" style="--d:.1s">Conteúdos rápidos para cuidar melhor do seu melhor amigo todos os dias.</p>
+    </div>
+
+    <div class="blog-grid">
+      <article class="post rv" style="--d:.05s">
+        <span class="post-tag">Vacinação</span>
+        <h3>Calendário de vacinação: o que saber no primeiro ano do filhote</h3>
+        <p>Quais vacinas são essenciais, em que idade começar e como manter a carteirinha sempre em dia.</p>
+        <span class="post-nota">Artigo em breve</span>
+      </article>
+      <article class="post rv" style="--d:.1s">
+        <span class="post-tag">Gatos</span>
+        <h3>Sinais de dor em gatos que quase ninguém percebe</h3>
+        <p>Gatos escondem desconforto. Aprenda a identificar mudanças de comportamento antes que o problema piore.</p>
+        <span class="post-nota">Artigo em breve</span>
+      </article>
+      <article class="post rv" style="--d:.15s">
+        <span class="post-tag">Prevenção</span>
+        <h3>Quando levar o cachorro ao veterinário sem esperar piorar</h3>
+        <p>Situações do dia a dia que merecem atenção profissional — não são emergência, mas também não esperam.</p>
+        <span class="post-nota">Artigo em breve</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     12. FAQ — quebra as últimas objeções antes do CTA final
+     ============================================================ -->
+<section class="faixa-cinza">
+  <div class="wrap wrap-centro faq">
+    <div class="centro">
+      <p class="olho rv">Dúvidas</p>
+      <h2 class="rv" style="--d:.05s">Perguntas frequentes</h2>
+    </div>
+
+    <details open class="rv">
+      <summary>Preciso agendar antes de ir?</summary>
+      <p>Recomendamos agendar pelo WhatsApp para garantir o horário e evitar espera. Em dias mais movimentados, quem já agendou é atendido primeiro.</p>
+    </details>
+    <details class="rv" style="--d:.04s">
+      <summary>Vocês atendem emergências?</summary>
+      <p>Atendemos urgências durante o horário de funcionamento. Se for fora do horário, chame no WhatsApp que orientamos os próximos passos.</p>
+    </details>
+    <details class="rv" style="--d:.08s">
+      <summary>Quanto custa a primeira consulta?</summary>
+      <p>Os valores variam conforme o serviço e o porte do animal. Pelo WhatsApp enviamos a tabela completa antes do agendamento, sem compromisso.</p>
+    </details>
+    <details class="rv" style="--d:.12s">
+      <summary>Vocês atendem gatos?</summary>
+      <p>Sim! Atendemos cães e gatos, com profissionais com experiência em medicina felina e um ambiente pensado para deixar os gatos mais tranquilos.</p>
+    </details>
+    <details class="rv" style="--d:.16s">
+      <summary>Meu pet é idoso. Pode fazer exames e procedimentos?</summary>
+      <p>Cada caso é avaliado individualmente, com exames pré-procedimento e monitoramento. Nossa equipe explica todos os cuidados antes de qualquer decisão.</p>
+    </details>
+    <details class="rv" style="--d:.2s">
+      <summary>Como faço para agendar?</summary>
+      <p>É só tocar em qualquer botão “Agendar consulta” da página e mandar a mensagem no WhatsApp. Respondemos em horário comercial para confirmar dia e horário.</p>
+    </details>
+  </div>
+</section>
+<!-- ============================================================
+     13. CTA FINAL
+     ============================================================ -->
+<section class="cta-final faixa-turq">
+  <span class="palavra branca" data-vel="0.05" aria-hidden="true">CUIDADO</span>
+  <div class="wrap cta-grid">
+    <div>
+      <h2 class="rv">Seu melhor amigo merece o melhor cuidado.</h2>
+      <p class="subtitulo rv" style="--d:.06s">Agende uma consulta e cuide da saúde do seu pet com quem entende e ama o que faz.</p>
+      <div class="rv" style="--d:.12s">
+        <a class="btn btn-branco" href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener">
+          <svg class="i i-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <p class="micro">Atendimento de segunda a sexta, das 8h às 19h, e sábado das 8h às 17h.</p>
+      </div>
+    </div>
+
+    <div class="cta-foto rv" style="--d:.15s">
+      <div class="foto-blob">
+        <!-- [TROCAR] foto de um pet sorrindo -->
+        <img src="https://images.unsplash.com/photo-1591946614720-90a587da4a36?w=760&h=760&fit=crop&q=80"
+             width="760" height="760" alt="Cachorro dourado brincando com um brinquedo" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     14. CONTATO + GOOGLE MAPS
+     ============================================================ -->
+<section id="contato">
+  <div class="wrap">
+    <div class="wrap-centro centro">
+      <p class="olho rv">Contato</p>
+      <h2 class="rv" style="--d:.05s">Fale com a gente</h2>
+      <p class="subtitulo rv" style="--d:.1s">Estamos prontos para receber você e seu pet.</p>
+    </div>
+
+    <div class="cont-grid">
+      <div class="info-lista">
+        <!-- [CONFIRMAR] WhatsApp real (trocar 5551999999999 no arquivo inteiro) -->
+        <a class="info rv" style="--d:.05s" href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener">
+          <span class="info-ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg></span>
+          <span><b>WhatsApp</b><span>(51) 99999-9999</span></span>
+        </a>
+
+        <!-- [CONFIRMAR] telefone real -->
+        <a class="info rv" style="--d:.1s" href="tel:+555133333333">
+          <span class="info-ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg></span>
+          <span><b>Telefone</b><span>(51) 3333-3333</span></span>
+        </a>
+
+        <!-- [CONFIRMAR] endereço real -->
+        <div class="info rv" style="--d:.15s">
+          <span class="info-ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <span><b>Endereço</b><span>Rua Exemplo, 123<br>Centro</span></span>
+        </div>
+
+        <!-- [CONFIRMAR] horários reais -->
+        <div class="info rv" style="--d:.2s">
+          <span class="info-ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+          <span><b>Horários</b><span>Segunda a sexta — 08h às 19h<br>Sábado — 08h às 17h</span></span>
+        </div>
+      </div>
+
+      <div class="rv" style="--d:.12s">
+        <div class="mapa-caixa">
+          <!-- [TROCAR] troque a query pelo endereço real da clínica -->
+          <iframe
+            src="https://www.google.com/maps?q=Rua%20Exemplo%2C%20123%2C%20Centro&z=15&output=embed"
+            title="Mapa com a localização da clínica" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="mapa-acoes">
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Rua+Exemplo%2C+123%2C+Centro" target="_blank" rel="noopener">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            Como chegar
+          </a>
+          <a class="btn btn-ghost" href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener">Agendar consulta</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- ============================================================
+     15. FOOTER
+     ============================================================ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="logo"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--turq)"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg> VivaPet</span>
+        <p class="foot-tag">Cuidando de quem faz sua vida mais feliz. 🐾</p>
+        <div class="sociais">
+          <!-- [CONFIRMAR] perfis reais das redes sociais -->
+          <a href="https://instagram.com/SEU_PERFIL" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg class="i i-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>
+          </a>
+          <a href="https://facebook.com/SEU_PERFIL" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg class="i i-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
+          </a>
+          <a href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg class="i i-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="foot-tit">Navegação</p>
+        <nav class="foot-links" aria-label="Rodapé">
+          <a href="#inicio">Início</a>
+          <a href="#clinica">Clínica</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#equipe">Veterinários</a>
+          <a href="#blog">Blog</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </div>
+
+      <div>
+        <p class="foot-tit">Atendimento</p>
+        <div class="foot-links">
+          <a href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener">WhatsApp: (51) 99999-9999</a>
+          <a href="tel:+555133333333">Telefone: (51) 3333-3333</a>
+          <span>Rua Exemplo, 123 — Centro</span>
+          <span>Seg a sex 08h–19h · Sáb 08h–17h</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="legal">
+      <!-- [CONFIRMAR] razão social e CNPJ reais -->
+      <p class="aviso">
+        <strong>VivaPet Clínica Veterinária</strong> — CNPJ 00.000.000/0001-00 · Rua Exemplo, 123 — Centro<br>
+        Este site não faz parte e não é endossado pelo Facebook, Instagram, Google ou YouTube.
+        Todas as marcas pertencem aos seus respectivos titulares.
+      </p>
+      <p>
+        <a href="termos.html">Termos de uso</a> ·
+        <a href="privacidade.html">Política de privacidade</a>
+      </p>
+      <p>© <span id="ano">2026</span> VivaPet Clínica Veterinária. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp flutuante (desktop) -->
+<a class="wa-float" href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <span class="rot">Agendar pelo WhatsApp</span>
+  <svg class="i i-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+<!-- Barra fixa de CTA no mobile -->
+<div class="barra-mobile">
+  <a class="btn" href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AQuero%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank" rel="noopener">
+    <svg class="i i-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    Agendar pelo WhatsApp
+  </a>
+</div>
+
+<script>
+/* ano dinâmico no rodapé */
+document.getElementById('ano').textContent = new Date().getFullYear();
+
+/* menu mobile */
+(function(){
+  var btn = document.getElementById('btn-menu');
+  var menu = document.getElementById('menu');
+  if(!btn || !menu) return;
+  function fechar(){
+    menu.classList.remove('aberto');
+    btn.setAttribute('aria-expanded','false');
+    btn.setAttribute('aria-label','Abrir menu');
+  }
+  btn.addEventListener('click', function(){
+    var aberto = menu.classList.toggle('aberto');
+    btn.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+    btn.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+  });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', fechar); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') fechar(); });
+})();
+
+/* header com sombra ao rolar */
+(function(){
+  var hdr = document.querySelector('.cabecalho');
+  if(!hdr) return;
+  function atualizar(){ hdr.classList.toggle('rolou', window.scrollY > 10); }
+  window.addEventListener('scroll', atualizar, {passive:true});
+  atualizar();
+})();
+
+/* animações de entrada (scroll reveal) */
+(function(){
+  var reduzir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var itens = document.querySelectorAll('.rv');
+  if(reduzir || !('IntersectionObserver' in window)){
+    itens.forEach(function(el){ el.classList.add('on'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); }
+    });
+  }, {threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  itens.forEach(function(el){ obs.observe(el); });
+})();
+
+/* parallax leve nas palavras gigantes */
+(function(){
+  var reduzir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduzir) return;
+  var palavras = document.querySelectorAll('.palavra[data-vel]');
+  if(!palavras.length) return;
+  var pendente = false;
+  function mover(){
+    pendente = false;
+    var meio = window.innerHeight / 2;
+    palavras.forEach(function(p){
+      var r = p.getBoundingClientRect();
+      var vel = parseFloat(p.getAttribute('data-vel')) || .05;
+      var desloc = (r.top + r.height/2 - meio) * vel * -1;
+      var base = p.closest('.amor') ? 'translateX(-50%) ' : '';
+      p.style.transform = base + 'translateY(' + desloc.toFixed(1) + 'px)';
+    });
+  }
+  window.addEventListener('scroll', function(){
+    if(!pendente){ pendente = true; requestAnimationFrame(mover); }
+  }, {passive:true});
+  mover();
+})();
+</script>
+</body>
+</html>
